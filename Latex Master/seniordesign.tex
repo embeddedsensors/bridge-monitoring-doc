@@ -1,0 +1,142 @@
+%!TEX TS-options = -shell-escape seniordesign.tex
+%Ultimate Formal Report Template 		Author: Dylan Morano ©
+%
+%Feel free to edit and redistribute 
+%
+%-------------------------------Document Information-------------------------------%
+
+\newcommand{\Report}		{Embedded Wireless Sensors for Structural Health Monitoring}		%Report Name
+\newcommand{\Author}		{Dylan Morano, Rebecca Cressman, Daniel Baima, Michael Smith}		%Author
+\newcommand{\Last}			{Morano, Cressman, Baima, Smith}									%Authors Last Name
+\newcommand{\Class}			{OCE-495}															%Class Title
+\newcommand{\Professor}		{Vincent, Hu}														%Professor(s)
+
+%----------------------------------------Preamble---------------------------------------%
+
+\documentclass[10pt,letterpaper,titlepage]{article}
+\usepackage[toc,page]{appendix}	%appendix support
+\usepackage{fixltx2e}	%official latex patch and fixes
+%\usepackage[latin1]{inputenc} 	%accepts different input encodings
+\usepackage{pdflscape}	%landscape support
+\usepackage{multicol}	%multicolumn support
+\usepackage{setspace}	%set line spaceing (double single half)
+\usepackage{geometry}	%change page geometry (margins)
+\usepackage{datetime}	%automatic date/time insertion
+\usepackage{fancyhdr}	%fancy headers
+\usepackage[cc]{titlepic}   %Allow title pictures
+\usepackage{titlesec}	%Select alternative section titles
+\usepackage{hyperref}	%support hypertext referencing
+\usepackage{paralist} 	%enumerate and itemize within paragraphs
+\usepackage{tabu}		%flexible latex tabulars
+\usepackage{amsmath}	%facilitates math formulas and equations
+\usepackage{amsfonts}	%math fonts and symbols
+\usepackage{amssymb}	%more symbols
+\usepackage{gensymb}	%general symbols
+\usepackage{graphicx}	%enhanced support for graphics
+\usepackage{epstopdf}	%.EPS file support
+\usepackage{subfigure}	%multiple figure containment
+\usepackage{caption}	%figure captions
+\usepackage{float}		%float figures within text
+\usepackage{listings}	%code and listing input
+\usepackage{mcode} 		%MATLAB code parsing mcode.sty required in working directory
+\usepackage{color} 		%custom color packaging
+\usepackage{apacite}	%citing APA format
+
+
+%	Define margins
+\geometry{top = 1.0in, bottom = 1.0in, left = 1.0in, right = 1.0in}
+
+%	Double spacing
+\doublespacing
+
+%	\Hide command for hiding section tidles
+\newcommand*\Hide{
+\titleformat{\chapter}[display]
+  {}{}{0pt}{\bf\Huge}
+\titleformat{\part}
+  {}{}{0pt}{}
+}
+
+%	Define colors for matlab insertion
+\definecolor{mygreen}{RGB}{28,172,0}  
+\definecolor{mylilas}{RGB}{170,55,241}
+
+%	define default path to graphic files
+\graphicspath{../figures}
+
+%	Declare types of images
+\DeclareGraphicsExtensions{.pdf,.png,.jpg,.eps}
+
+
+%--------------------------------------------Begin Document--------------------------------------------%
+
+\begin{document}
+
+\titlepic{\includegraphics[width=0.3\textwidth]{URILogo}}
+\title{\Report}
+\date{\today}
+\author{\Author\\\Class\\\Professor}
+
+\pagenumbering{arabic}
+\rhead{\Last}
+\lhead{\Report}
+\pagestyle{fancy}
+
+%	print titlepage
+\maketitle
+
+%	print Abstract
+% \section*{Abstract}
+% \newpage
+
+%	print table of contents
+\tableofcontents
+
+%	print lists of content
+\listoffigures
+\listoftables
+%\listofequations
+\newpage
+%--------------------------------Begin Body--------------------------------%
+
+%--------------------------------Begin References--------------------------------%
+
+%	BibTex Creator: truben.no/latex/bibtex 
+
+% \newpage
+% \bibliography{\Report}{}
+% \bibliographystyle{apacite}
+
+%--------------------------------Begin Appendix--------------------------------%
+
+\begin{appendices}
+
+\section{MATLAB Calculations}
+
+%	Matlab code parser block
+%-----------------------------------------------------------------
+% Must have before any Matlab code
+
+\lstset{language=Matlab, %basicstyle=\color{red},
+    breaklines=true, caption={},%
+    morekeywords={matlab2tikz},
+    basicstyle=\tiny,
+    numberstyle=\tiny,
+    keywordstyle=\color{blue},%
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+    identifierstyle=\color{black},%
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},%
+    showstringspaces=false,%without this there will be a symbol in the places where there is a space
+    numbers=left,%
+    numberstyle={\tiny \color{black}},% size of the numbers
+    numbersep=9pt, % this defines how far the numbers are from the text
+    emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+    emph=[2]{word1,word2}, emphstyle=[2]{style},
+    captionpos=b,					% sets the caption-position to bottom
+}
+%-----------------------------------------------------------------
+
+
+\end{appendices}
+\end{document}
