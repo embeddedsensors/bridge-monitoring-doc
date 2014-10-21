@@ -1,0 +1,171 @@
+
+%Ultimate Formal Report Template 		Author: Dylan Morano ©
+%
+%Feel free to edit and redistribute 
+%
+%-------------------------------Document Information-------------------------------%
+
+\newcommand{\Report}		{Free Hanging Steel Rod Frequency Analysis}			%Report Name
+\newcommand{\Author}		{Morano, Cressman, Baima, Pickering, Smith}				%Author
+\newcommand{\Last}			{Morano, Cressman, Baima, Pickering, Smith}				%Authors Last Name
+\newcommand{\Class}			{Development of an Active Acoustic Tension Cable Damage Localization Package}					%Class Title
+\newcommand{\Professor}		{Hu, Vincent}				%Professor(s)
+
+%----------------------------------------Preamble---------------------------------------%
+
+\documentclass[10pt,letterpaper,titlepage]{article}
+\usepackage[toc,page]{appendix}	%appendix support
+\usepackage{fixltx2e}	%official latex patch and fixes
+%\usepackage[latin1]{inputenc} 	%accepts different input encodings
+\usepackage{pdflscape}	%landscape support
+\usepackage{multicol}	%multicolumn support
+\usepackage{setspace}	%set line spaceing (double single half)
+\usepackage{geometry}	%change page geometry (margins)
+\usepackage{datetime}	%automatic date/time insertion
+\usepackage{fancyhdr}	%fancy headers
+\usepackage{titlesec}	%Select alternative section titles
+\usepackage{hyperref}	%support hypertext referencing
+\usepackage{paralist} 	%enumerate and itemize within paragraphs
+\usepackage{tabu}		%flexible latex tabulars
+\usepackage{booktabs}	%enhanced tables
+\usepackage{amsmath}	%facilitates math formulas and equations
+\usepackage{amsfonts}	%math fonts and symbols
+\usepackage{amssymb}	%more symbols
+\usepackage{graphicx}	%enhanced support for graphics
+\usepackage{subfigure}	%multiple figure containment
+\usepackage{caption}	%figure captions
+\usepackage{float}		%float figures within text
+\usepackage{epstopdf}	%.EPS file support
+\usepackage{listings}	%code and listing input
+% \usepackage{mcode} 		%MATLAB code parsing mcode.sty required in working directory
+\usepackage{color} 		%custom color packaging
+\usepackage{apacite}	%citing APA format
+
+%	Define margins
+\geometry{top = 1.0in, bottom = 1.0in, left = 1.0in, right = 1.0in}
+
+%	Double spacing
+\doublespacing
+
+%	\Hide command for hiding section titles
+\newcommand*\Hide{
+\titleformat{\chapter}[display]
+  {}{}{0pt}{\bf \Huge}
+\titleformat{\part}
+  {}{}{0pt}{}
+}
+
+%	Define colors for matlab insertion
+\definecolor{mygreen}{RGB}{28,172,0}  
+\definecolor{mylilas}{RGB}{170,55,241}
+
+%	define default path to graphic files
+\graphicspath{ ../figures}
+
+
+%	Declare types of images
+\DeclareGraphicsExtensions{.pdf,.png,.jpg,.eps}
+
+
+%----------------------------Begin Document-------------------------------%
+
+\begin{document}
+
+\title{\Report}
+\date{\today}
+\author{\Author \\ \Class \\ \Professor}	
+
+\pagenumbering{arabic}
+\rhead{\Last}
+\lhead{\Report}
+\pagestyle{fancy}
+
+%	print titlepage
+\maketitle
+
+% print Abstract
+% \input{../Abstract/abstract.tex}
+\newpage
+
+%	print table of contents
+% \tableofcontents
+
+%	print lists of content
+% \listoffigures
+%\listoftables
+%\listofequations
+
+%--------------------------------Begin Sections--------------------------------%
+\newpage
+
+% Introduction
+\section{Introduction}
+
+In order to develop a system for acoustic monitoring of tension cables, it is first necessary to determine the viable frequencies and amplitudes which should be used in the system. Acoustic resonance will specifically be studied in order to optimize the future package. Acoustic resonance is the tendency of a system to oscillate with greater amplitude at some frequencies than at others. By determining the resonant frequencies of the system in which this package will be deployed, it is possible to generate much stronger vibrations which will be easier to detect and study. The purpose of this experiment is to explore the resonant frequencies in smaller scale steel rods in order to optimize the larger scale acoustic system to be developed.
+
+\section{Experimental Procedure}
+
+This experiment will explore two different scenarios. The first will be an \emph{unsupported} hanging steel rod. The second will be several unsupported rods secured in to a bundle. Prior to the experiment, the theoretically expected resonant frequencies will be calculated. This will be completed in matlab and will provide incite as to what frequencies should be expected to arise in the lab test. 5 - 10 modal frequencies will be calculated prior to the experiment. 
+
+
+
+PROCEDURE GOES HERE
+
+\section{Results}
+
+After data has been collected through several experimental trials, it will be analyzed for several components. A time series of impact events will be generated, as well as plots of the frequency spectra. The power density spectra will also be analyzed. The found experimental frequencies will be compared to those calculated prior to the experiment in order to confirm or deny the current method for theoretically modeling the vibrations in these rods/cables. 
+
+\subsection{Considerations}
+
+Certain considerations will need to be made before and after the experimentation process. What noise will be present (i.e mechanical, electrical, background)? What type of filter will provide the best results? How might the experimental process be adapted in the event that the results to not comply with the theoretical calculations?
+
+% \input{../Intro/intro.tex}
+% % Methods
+% \input{../Methods/methods.tex}
+% % Results
+% \input{../Results/results.tex}
+% % Conclusion
+% \input{../Conclusion/conclusion.tex}
+
+%--------------------------------Begin References--------------------------------%
+
+%	BibTex Creator: truben.no/latex/bibtex 
+
+% \newpage
+% \nocite{*}
+% \bibliography{filename}
+% \bibliographystyle{apacite}
+
+%--------------------------------Begin Appendix--------------------------------%
+
+% \begin{appendices}
+
+% \section{MATLAB Calculations}
+
+%	Matlab code parser block
+%-----------------------------------------------------------------
+% Must have before any Matlab code
+
+\lstset{language=Matlab, %basicstyle=\color{red},
+    breaklines=true, caption={},%
+    morekeywords={matlab2tikz},
+    basicstyle=\tiny,
+    numberstyle=\tiny,
+    keywordstyle=\color{blue},%
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+    identifierstyle=\color{black},%
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},%
+    showstringspaces=false,%without this there will be a symbol in the places where there is a space
+    numbers=left,%
+    numberstyle={\tiny \color{black}},% size of the numbers
+    numbersep=9pt, % this defines how far the numbers are from the text
+    emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+    emph=[2]{word1,word2}, emphstyle=[2]{style},
+    captionpos=b,					% sets the caption-position to bottom
+}
+%-----------------------------------------------------------------=
+% \lstinputlisting{../../}
+
+% \end{appendices}
+\end{document}
