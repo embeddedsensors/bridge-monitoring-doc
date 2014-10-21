@@ -105,21 +105,45 @@ In order to develop a system for acoustic monitoring of tension cables, it is fi
 
 \section{Experimental Procedure}
 
-This experiment will explore two different scenarios. The first will be an \emph{unsupported} hanging steel rod. The second will be several unsupported rods secured in to a bundle. Prior to the experiment, the theoretically expected resonant frequencies will be calculated. This will be completed in matlab and will provide incite as to what frequencies should be expected to arise in the lab test. 5 - 10 modal frequencies will be calculated prior to the experiment. 
+This experiment will explore two different scenarios. The first will be an \emph{unsupported} hanging steel rod. The second will be several unsupported rods secured in to a bundle. Prior to the experiment, the theoretically expected resonant frequencies should be calculated. This will be completed in MATLAB and will provide insight as to what frequencies should be expected to arise in the lab test. 5 - 10 modal frequencies will be calculated prior to the experiment. 
 
-\section{Procedure}
+\subsection{Lab Procedure}
 
-Suspend the steel rod with a string on each end. Tap the end of the rod with a hammer and record the sound. Vary the strength of each tap to obtain different frequencies, and be sure the rod is no longer vibrated when a new frequency is introduced. The trial can be repeated for a bundle of suspended rods. The recording will be uploaded and analyzed in Matlab. 
+\begin{enumerate}
+	
+	\item Suspend the steel rod with a string on each end.
+	\item Tap the end of the rod with a hammer and record the sound. 
+	\item Vary the strength of each tap to obtain different amplitudes and modes. Be sure the rod is no longer vibrating when a new strike is introduced. 
+	\item Steps 1-3 trial can be repeated for a bundle of suspended rods. 
+	\item The recording will be uploaded and analyzed in Matlab. 
 
-PROCEDURE GOES HERE
-
+\end{enumerate}
 \section{Results}
 
-After data has been collected through several experimental trials, it will be analyzed for several components. A time series of impact events will be generated, as well as plots of the frequency spectra. The power density spectra will also be analyzed. The found experimental frequencies will be compared to those calculated prior to the experiment in order to confirm or deny the current method for theoretically modeling the vibrations in these rods/cables. 
+After data has been collected through several experimental trials, it will be analyzed for several components. A time series of impact events will be generated, as well as plots of the frequency spectra. The power density spectra will also be analyzed. The found experimental frequencies will be compared to those calculated prior to the experiment in order to confirm or deny the current method for theoretically modeling the vibrations in these rods/cables. \\ \\
+
+The expected modal frequencies for a 20ft long A-36 steel rod have been calculated and can be seen below in Table~\ref{modes}.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c|c}
+
+	Modes (n) & Frequency (Hz) \\ \hline
+	1         & 207.7          \\
+	5         & 1869.0         \\
+	25        & 10175.6        \\
+	50        & 20558.8        \\
+	75        & 30942.0        \\
+	100       & 41325.3       
+	
+\end{tabular}
+\caption{Theoretically calculated resonant frequencies for a free hanging 20ft A-36 steel rod.}
+\label{modes}
+\end{table}
 
 \subsection{Considerations}
 
-Certain considerations will need to be made before and after the experimentation process. What noise will be present (i.e mechanical, electrical, background)? What type of filter will provide the best results? How might the experimental process be adapted in the event that the results to not comply with the theoretical calculations?
+Certain considerations will need to be made before and after the experimentation process. What noise will be present (i.e mechanical, electrical, background)? What type of filter will provide the best results? How might the experimental process be adapted in the event that the results do not comply with the theoretical calculations?
 
 % \input{../Intro/intro.tex}
 % % Methods
