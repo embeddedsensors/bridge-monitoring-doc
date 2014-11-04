@@ -9,6 +9,7 @@ fs_sound = 44100;
 accel_length_s = length(Ch1)/fs_accel;
 accel_domain = linspace(0,accel_length_s,length(Ch1));
 accelCh1 = Ch1(1887:end);
+% accelCh1 = Ch2(1887:end);
 accel_time = accel_domain(1887:end) - accel_domain(1887);
 figure()
 plot(accel_time,accelCh1)
