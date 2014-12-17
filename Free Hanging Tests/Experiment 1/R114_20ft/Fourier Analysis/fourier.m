@@ -1,10 +1,10 @@
 clc; close all;
-load R114_data.mat
+% load R114_data.mat
 
 fs_accel = 2048;
 fs_sound = 44100;
 %% Import initial data
-
+mp_wo_accel = audioread('../midpoint_wo_accel.m4a');
 % Calculate time domain for accelerometer and plot
 accel_length_s = length(Ch1)/fs_accel;
 accel_domain = linspace(0,accel_length_s,length(Ch1));
@@ -18,9 +18,9 @@ ylabel('Longitudinal Acceleration (g)')
 xlabel('Time (s)')
 
 % Calculate time domain for sound recorder and plot
-i = 77780:304200;
+i = 87780:300700;
 sound = mp_wo_accel;
-i = 250000 : 300000;
+% i = 250000 : 300000;
 sound_length_s = length(sound)/fs_sound;
 sound_domain = linspace(0,sound_length_s,length(sound));
 soundsample = sound(i);
